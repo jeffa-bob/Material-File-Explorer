@@ -4,16 +4,272 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Win_file_test.MainWindow"
-        Title="Win_file_test">
-  <Ribbon Name="File" DockPanel.Dock="Top" Orientation="Horizontal">
-    <RibbonTab Header="Home">
+        Title="Win_file_test"
+        Height="600"
+        Width="1050"
+        Background="#212121">
+  <Window.Styles>
+    <Style Selector="RibbonTab.Header">
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="Foreground" Value="#FAFAFA"/>
+    </Style>
+    <Style Selector="TextBlock">
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="Foreground" Value="#FAFAFA"/>
+    </Style>
+  </Window.Styles>
+  <Ribbon Background="#212121" VerticalAlignment="Top" Name="File" DockPanel.Dock="Top" Orientation="Horizontal">
+
+    <RibbonTab Header="Home" Background="#212121">
       <RibbonTab.Content>
-        <RibbonGroupBox>
-          <RadioButton IsChecked="False"></RadioButton>
-        </RibbonGroupBox>
+        <StackPanel Background="#212121" Orientation="Horizontal">
+          <RibbonGroupBox Header="Clipboard">
+            <StackPanel Orientation="Horizontal">
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="avares://Win file test/Assets/round_push_pin_black_18dp.png"></Image>
+                  <TextBlock> Pin to Quick access</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_file_copy_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center">Copy</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_content_paste_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center">Paste</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Width="22" Height="15" Stretch="Fill"  Source="/Assets/round_content_cut_black_18dp.png">
+                    <Image.RenderTransform>
+                      <RotateTransform Angle="-90"/>
+                    </Image.RenderTransform>
+                  </Image>
+                  <TextBlock Margin="0,0,0,0">Cut</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="22" Source="avares://Win file test/Assets/round_snippet_folder_black_18dp.png"></Image>
+                  <TextBlock Margin="1,2,0,0">Copy Path</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Height="22" Source="/Assets/round_arrow_circle_up_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Paste shortcut</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Organize">
+            <RibbonGroupBox>
+              <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                  <StackPanel Orientation="Horizontal">
+                    <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
+                    <Image ZIndex="20" Margin="-38,-30,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
+                  </StackPanel>
+                  <TextBlock>Move to</TextBlock>
+                </StackPanel>
+                <ComboBox Margin="-48,0,0,0" Width="60" Background="Transparent" BorderThickness="0"></ComboBox>
+              </StackPanel>
+              <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                  <StackPanel Orientation="Horizontal">
+                    <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
+                    <Image ZIndex="20" Margin="-30,-20,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
+                  </StackPanel>
+                  <TextBlock>Copy to</TextBlock>
+                </StackPanel>
+                <ComboBox Margin="-48,0,0,0" Width="60" Background="Transparent" BorderThickness="0"></ComboBox>
+              </StackPanel>
+            </RibbonGroupBox>
+            <RibbonGroupBox>
+              <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                  <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                      <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
+                    </StackPanel>
+                    <TextBlock>Delete</TextBlock>
+                  </StackPanel>
+                  <ComboBox Margin="-40,0,0,0" Width="50" Background="Transparent" BorderThickness="0"></ComboBox>
+                </StackPanel>
+                <Button Background="Transparent" BorderThickness="0">
+                  <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
+                    <Image Margin="0,-5,0,0" Source="/Assets/round_calendar_view_day_black_18dp.png"></Image>
+                    <TextBlock Margin="0,5,0,0">Rename</TextBlock>
+                  </StackPanel>
+                </Button>
+              </StackPanel>
+            </RibbonGroupBox>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="New">
+            <StackPanel Orientation="Horizontal">
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Margin="0,-5,0,0" Source="/Assets/round_create_new_folder_black_18dp.png"></Image>
+                  <TextBlock Margin="0,4,0,0"> New Folder</TextBlock>
+                </StackPanel>
+              </Button>
+              <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Height="20" Source="/Assets/round_note_add_black_18dp.png"></Image>
+                  <TextBlock Margin="0,2,0,0">New item</TextBlock>
+                  <ComboBox Background="Transparent" BorderThickness="0" Margin="-70,0,0,0" Width="85"></ComboBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Height="20" Source="/Assets/round_class_black_18dp.png"></Image>
+                  <TextBlock Margin="0,2,0,0">Easy Access</TextBlock>
+                  <ComboBox Background="Transparent" BorderThickness="0" Margin="-80,0,0,0" Width="95"></ComboBox>
+                </StackPanel>
+              </StackPanel>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Open">
+            <StackPanel Orientation="Horizontal">
+              <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                  <Image ZIndex="0" Margin="8,0,0,0" Source="/Assets/round_tune_black_18dp.png"></Image>
+                </StackPanel>
+                <TextBlock>Properties</TextBlock>
+              </StackPanel>
+              <ComboBox Margin="-60,0,0,0" Width="70" Background="Transparent" BorderThickness="0"></ComboBox>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+              <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Image Height="20" Source="/Assets/round_open_in_new_black_18dp.png"></Image>
+                <TextBlock Margin="3,2,0,0">Open</TextBlock>
+                <ComboBox Background="Transparent" BorderThickness="0" Margin="-50,0,0,0" Width="65"></ComboBox>
+              </StackPanel>
+              <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_edit_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Edit</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_history_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">History</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Select">
+            <StackPanel Orientation="Vertical">
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_select_all_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Select All</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_filter_none_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Select None</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_invert_colors_black_18dp.png"></Image>
+                  <TextBlock Margin="0,0,0,0">Invert Selection</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+        </StackPanel>
       </RibbonTab.Content>
     </RibbonTab>
-    <RibbonTab Header="Share"></RibbonTab>
-    <RibbonTab Header="View"></RibbonTab>
+    <RibbonTab Header="Share" Background="#212121">
+      <RibbonTab.Content>
+        <StackPanel Orientation="Horizontal" Background="#212121">
+          <RibbonGroupBox Header="Send">
+            <StackPanel Orientation="Horizontal">
+              <Button Background="Transparent" BorderThickness="0">
+                <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
+                  <Image Margin="0,0,0,0" Source="/Assets/round_share_black_18dp.png"></Image>
+                  <TextBlock Margin="0,5,0,0">Share</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button Background="Transparent" BorderThickness="0">
+                <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
+                  <Image Margin="0,0,0,0" Source="/Assets/round_email_black_18dp.png"></Image>
+                  <TextBlock Margin="0,5,0,0">Email</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button Background="Transparent" BorderThickness="0">
+                <StackPanel Margin="0,-9,0,0" Orientation="Vertical">
+                  <Image Height="45" Margin="0,0,0,0" Source="/Assets/folder-zip-outline.png"></Image>
+                  <TextBlock TextAlignment="Center" Margin="0,0,0,0">Zip</TextBlock>
+                </StackPanel>
+              </Button>
+              <StackPanel Orientation="Vertical">
+                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_disc_full_black_18dp.png"></Image>
+                    <TextBlock Margin="4,0,0,0">Burn to disc</TextBlock>
+                  </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_print_black_18dp.png"></Image>
+                    <TextBlock Margin="4,0,0,0">Print</TextBlock>
+                  </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                  <StackPanel Margin="-3,0,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Image Margin="4,0,0,0" Height="20" Source="/Assets/round_print_black_18dp.png"></Image>
+                    <Image Margin="-21,-15,0,0" Height="22" Source="/Assets/round_call_black_18dp.png">
+                      <Image.RenderTransform>
+                        <RotateTransform Angle="135"/>
+                      </Image.RenderTransform>
+                    </Image>
+                    <TextBlock Margin="2,0,0,0"> Fax </TextBlock>
+                  </StackPanel>
+                </Button>
+              </StackPanel>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Share with">
+            <StackPanel Orientation="Horizontal">
+              <ListBox Background="#424242" VerticalAlignment="Center">
+                <ListBoxItem>
+                  <StackPanel Orientation="Horizontal">
+                    <Image Height="18" Margin="0,0,2,0" Source="/Assets/round_group_black_18dp.png"></Image>
+                    <TextBlock>Specific People...</TextBlock>
+                  </StackPanel>
+                </ListBoxItem>
+              </ListBox>
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_lock_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center">Remove&#x0a;Access</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox>
+            <Button BorderThickness="0" Background="Transparent">
+              <StackPanel Orientation="Vertical">
+                <Image Source="/Assets/round_format_list_bulleted_black_18dp.png"></Image>
+                <TextBlock TextAlignment="Center">
+                  Advanced&#x0a;security
+                </TextBlock>
+              </StackPanel>
+            </Button>
+          </RibbonGroupBox>
+        </StackPanel>
+      </RibbonTab.Content>
+    </RibbonTab>
+    <RibbonTab Header="View" Background="#212121"></RibbonTab>
   </Ribbon>
 </Window>
