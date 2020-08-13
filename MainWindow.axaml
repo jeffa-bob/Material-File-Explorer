@@ -23,7 +23,7 @@
       <Setter Property="Foreground" Value="#FAFAFA"/>
       <Setter Property="FontWeight" Value="520"/>
     </Style>
-
+    <!--
     <Style Selector="Documents">
       <Setter Property="Visibility" Value="Visible"/>
       <Style.Triggers>
@@ -31,7 +31,7 @@
           <Setter Property="Visibility" Value="Hidden"/>
         </DataTrigger>
       </Style.Triggers>
-    </Style>
+    </Style>-->
   </Window.Styles>
   <StackPanel Orientation="Vertical">
   <Ribbon Background="#212121" VerticalAlignment="Top" Name="File" DockPanel.Dock="Top" Orientation="Horizontal">
