@@ -3,7 +3,7 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 
-namespace file_readers
+namespace Materialfile.filereader
 {
   public struct filitem
   {

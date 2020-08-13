@@ -2,10 +2,10 @@
 using Avalonia.Interactivity;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using file_readers;
+using Materialfile.filereader;
 using ReactiveUI;
 
-namespace Win_file_test
+namespace Materialfile
 {
   public class MainWindow : Window
   {

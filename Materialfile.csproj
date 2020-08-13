@@ -19,4 +19,7 @@
     <EmbeddedResource Remove="file readers\**" />
     <None Remove="file readers\**" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="file readers\Materialfile.filereader.csproj" />
+  </ItemGroup>
 </Project>

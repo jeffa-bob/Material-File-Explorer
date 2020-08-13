@@ -1,9 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using file_readers;
 
-namespace Win_file_test
+namespace Materialfile
 {
   public class App : Application
   {
