@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,5 +12,11 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
     <PackageReference Include="AvaloniaRibbon" Version="1.1.2-build100120-02" />
     <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="file readers\**" />
+    <Compile Remove="file readers\**" />
+    <EmbeddedResource Remove="file readers\**" />
+    <None Remove="file readers\**" />
   </ItemGroup>
 </Project>

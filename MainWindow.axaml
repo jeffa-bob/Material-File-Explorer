@@ -15,9 +15,25 @@
     </Style>
     <Style Selector="TextBlock">
       <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="FontWeight" Value="520"/>
       <Setter Property="Foreground" Value="#FAFAFA"/>
     </Style>
+    <Style Selector="TextBox">
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="Foreground" Value="#FAFAFA"/>
+      <Setter Property="FontWeight" Value="520"/>
+    </Style>
+
+    <Style Selector="Documents">
+      <Setter Property="Visibility" Value="Visible"/>
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding IsEnabled}" Value="True">
+          <Setter Property="Visibility" Value="Hidden"/>
+        </DataTrigger>
+      </Style.Triggers>
+    </Style>
   </Window.Styles>
+  <StackPanel Orientation="Vertical">
   <Ribbon Background="#212121" VerticalAlignment="Top" Name="File" DockPanel.Dock="Top" Orientation="Horizontal">
 
     <RibbonTab Header="Home" Background="#212121">
@@ -197,13 +213,13 @@
               <Button Background="Transparent" BorderThickness="0">
                 <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
                   <Image Margin="0,0,0,0" Source="/Assets/round_share_black_18dp.png"></Image>
-                  <TextBlock Margin="0,5,0,0">Share</TextBlock>
+                  <TextBlock TextAlignment="Center" Margin="0,5,0,0">Share</TextBlock>
                 </StackPanel>
               </Button>
               <Button Background="Transparent" BorderThickness="0">
                 <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
                   <Image Margin="0,0,0,0" Source="/Assets/round_email_black_18dp.png"></Image>
-                  <TextBlock Margin="0,5,0,0">Email</TextBlock>
+                  <TextBlock TextAlignment="Center" Margin="0,5,0,0">Email</TextBlock>
                 </StackPanel>
               </Button>
               <Button Background="Transparent" BorderThickness="0">
@@ -270,6 +286,39 @@
         </StackPanel>
       </RibbonTab.Content>
     </RibbonTab>
-    <RibbonTab Header="View" Background="#212121"></RibbonTab>
   </Ribbon>
+  <DockPanel Margin="0,20,0,0" Background="#424242">
+  <StackPanel   Orientation="Horizontal" DockPanel.Dock="Left">
+    <Button DockPanel.Dock="Left" Background="Transparent" BorderThickness="0" >
+      <Image Height="25" Source="/Assets/round_arrow_circle_up_black_18dp.png">
+        <Image.RenderTransform>
+          <RotateTransform  Angle="-90"/>
+        </Image.RenderTransform>
+      </Image>
+    </Button>
+    <Button Background="Transparent" BorderThickness="0" >
+      <Image Height="25" Source="/Assets/round_arrow_circle_up_black_18dp.png">
+        <Image.RenderTransform>
+          <RotateTransform  Angle="90"/>
+        </Image.RenderTransform>
+      </Image>
+    </Button>
+    <StackPanel Orientation="Vertical">
+      <Image Margin="2,5,0,0" Source="/Assets/round_arrow_drop_down_black_18dp.png">
+      </Image>
+    <ComboBox Background="Transparent" BorderThickness="0" Margin="10,-30,0,0" Height="30" Width="11"></ComboBox>
+    </StackPanel>
+
+    <Button Background="Transparent" BorderThickness="0" >
+      <Image Height="25" Source="/Assets/round_exit_to_app_black_18dp.png">
+      </Image>
+    </Button>
+  </StackPanel>
+    <TextBox BorderThickness="2" CaretBrush="#FAFAFA" DockPanel.Dock="Right" HorizontalAlignment="Stretch" Background="Transparent" Height="25" Text="{Binding cur.path}"/>
+    </DockPanel>
+    <DockPanel Background="#424242">
+      <ListBox Background="Transparent" VerticalAlignment="Stretch" Width="125" DockPanel.Dock="Left"></ListBox>
+      <ListBox Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DockPanel.Dock="Right"/>
+    </DockPanel>
+  </StackPanel>
 </Window>

@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Logging.Serilog;
+using file_readers;
 
 namespace Win_file_test
 {
