@@ -88,14 +88,16 @@
           <RibbonGroupBox Header="Organize">
             <RibbonGroupBox>
               <StackPanel Orientation="Horizontal">
+                <Menu>
+                  <MenuItem>
                 <StackPanel Orientation="Vertical">
                   <StackPanel Orientation="Horizontal">
                     <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
                     <Image ZIndex="20" Margin="-38,-30,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
                   </StackPanel>
                   <TextBlock>Move to</TextBlock>
-                </StackPanel>
-                <ComboBox Margin="-48,0,0,0" Width="60" Background="Transparent" BorderThickness="0"></ComboBox>
+                </StackPanel></MenuItem>
+                </Menu>
               </StackPanel>
               <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">

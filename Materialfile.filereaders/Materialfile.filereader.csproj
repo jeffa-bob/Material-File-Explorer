@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>file_readers</RootNamespace>
+    <RootNamespace>Material.filereader</RootNamespace>
   </PropertyGroup>
 
 </Project>

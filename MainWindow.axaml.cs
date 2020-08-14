@@ -1,9 +1,7 @@
 ﻿using Avalonia;
-using Avalonia.Interactivity;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Materialfile.filereader;
-using ReactiveUI;
 
 namespace Materialfile
 {
@@ -17,7 +15,7 @@ namespace Materialfile
       cur = new CurDirectory();
       cur.path = "C:\\";
 #if DEBUG
-            this.AttachDevTools();
+      this.AttachDevTools();
 #endif
     }
 

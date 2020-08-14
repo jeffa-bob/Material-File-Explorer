@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Materialfile", "Materialfile.csproj", "{5C80D776-3FD9-4F06-9245-0B876861E31A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Materialfile.filereader", "file readers\Materialfile.filereader.csproj", "{16F17975-DAEE-4CD8-9442-9D090486A467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Materialfile.filereader", "Materialfile.filereaders\Materialfile.filereader.csproj", "{16F17975-DAEE-4CD8-9442-9D090486A467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

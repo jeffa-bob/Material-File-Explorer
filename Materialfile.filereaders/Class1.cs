@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace Materialfile.filereader
 {
@@ -16,7 +15,7 @@ namespace Materialfile.filereader
     public string path { get; set; }
     private List<string> directories { get; set; }
     private List<string> files { get; set; }
-    public  List<filitem> items { get; private set; }
+    public List<filitem> items { get; private set; }
 
     public void getitems()
     {
