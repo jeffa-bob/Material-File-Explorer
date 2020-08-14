@@ -10,10 +10,10 @@ namespace Materialfile
     public CurDirectory cur { get; set; }
     public MainWindow()
     {
+      cur = new CurDirectory();
+      cur.getitems();
       InitializeComponent();
       DataContext = this;
-      cur = new CurDirectory();
-      cur.path = "C:\\";
 #if DEBUG
       this.AttachDevTools();
 #endif
