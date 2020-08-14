@@ -44,7 +44,7 @@
               <Button BorderThickness="0" Background="Transparent">
                 <StackPanel Orientation="Vertical">
                   <Image Source="avares://Win file test/Assets/round_push_pin_black_18dp.png"></Image>
-                  <TextBlock> Pin to Quick access</TextBlock>
+                  <TextBlock TextAlignment="Center"> Pin to Quick&#x0a;access</TextBlock>
                 </StackPanel>
               </Button>
               <Button BorderThickness="0" Background="Transparent">
@@ -90,37 +90,46 @@
               <StackPanel Orientation="Horizontal">
                 <Menu>
                   <MenuItem>
+                <MenuItem.Header>
                 <StackPanel Orientation="Vertical">
                   <StackPanel Orientation="Horizontal">
-                    <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
+                    <Image ZIndex="0" Margin="0,0,0,0" Source="\Assets\round_folder_black_18dp.png"></Image>
                     <Image ZIndex="20" Margin="-38,-30,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
-                  </StackPanel>
-                  <TextBlock>Move to</TextBlock>
-                </StackPanel></MenuItem>
-                </Menu>
-              </StackPanel>
-              <StackPanel Orientation="Horizontal">
+                    <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                    </StackPanel>
+                    <TextBlock Text="Move To"/>
+                  </StackPanel></MenuItem.Header>
+                  <MenuItem Header="tree"/>
+                  </MenuItem>
+                  <MenuItem>
+                <MenuItem.Header>
                 <StackPanel Orientation="Vertical">
                   <StackPanel Orientation="Horizontal">
                     <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
                     <Image ZIndex="20" Margin="-30,-20,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
-                  </StackPanel>
-                  <TextBlock>Copy to</TextBlock>
-                </StackPanel>
-                <ComboBox Margin="-48,0,0,0" Width="60" Background="Transparent" BorderThickness="0"></ComboBox>
+                    <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                    </StackPanel>
+                    <TextBlock Text="Copy To"/>
+                  </StackPanel></MenuItem.Header>
+                  <MenuItem Header="tree"/>
+                  </MenuItem>
+                </Menu>
               </StackPanel>
             </RibbonGroupBox>
             <RibbonGroupBox>
               <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal">
-                  <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
-                      <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
+                <Menu>
+                  <MenuItem>
+                <MenuItem.Header>
+                <StackPanel Orientation="Vertical">
+                  <StackPanel Orientation="Horizontal">
+                    <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
+                    <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
                     </StackPanel>
-                    <TextBlock>Delete</TextBlock>
-                  </StackPanel>
-                  <ComboBox Margin="-40,0,0,0" Width="50" Background="Transparent" BorderThickness="0"></ComboBox>
-                </StackPanel>
+                    <TextBlock Text="Delete"/>
+                  </StackPanel></MenuItem.Header>
+                  <MenuItem Header="tree"/>
+                  </MenuItem></Menu>
                 <Button Background="Transparent" BorderThickness="0">
                   <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
                     <Image Margin="0,-5,0,0" Source="/Assets/round_calendar_view_day_black_18dp.png"></Image>
@@ -139,35 +148,55 @@
                 </StackPanel>
               </Button>
               <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+              <Menu Margin="0,-7,0,0">
+                <MenuItem>
+                <MenuItem.Header>
+                <StackPanel Orientation="Horizontal">
                   <Image Height="20" Source="/Assets/round_note_add_black_18dp.png"></Image>
-                  <TextBlock Margin="0,2,0,0">New item</TextBlock>
-                  <ComboBox Background="Transparent" BorderThickness="0" Margin="-70,0,0,0" Width="85"></ComboBox>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <TextBlock Margin="0,10,0,0">New item</TextBlock>
+                  <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                  </StackPanel>
+                </MenuItem.Header>
+                </MenuItem>
+                </Menu>
+                <Menu Margin="0,-10,0,0">
+                <MenuItem>
+                <MenuItem.Header>
+                <StackPanel Orientation="Horizontal">
                   <Image Height="20" Source="/Assets/round_class_black_18dp.png"></Image>
-                  <TextBlock Margin="0,2,0,0">Easy Access</TextBlock>
-                  <ComboBox Background="Transparent" BorderThickness="0" Margin="-80,0,0,0" Width="95"></ComboBox>
+                  <TextBlock Margin="0,10,0,0">Easy Access</TextBlock>
+                  <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
                 </StackPanel>
+                </MenuItem.Header>
+                </MenuItem>
+              </Menu>
               </StackPanel>
             </StackPanel>
           </RibbonGroupBox>
-          <RibbonGroupBox Header="Open">
-            <StackPanel Orientation="Horizontal">
-              <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                  <Image ZIndex="0" Margin="8,0,0,0" Source="/Assets/round_tune_black_18dp.png"></Image>
-                </StackPanel>
-                <TextBlock>Properties</TextBlock>
-              </StackPanel>
-              <ComboBox Margin="-60,0,0,0" Width="70" Background="Transparent" BorderThickness="0"></ComboBox>
-            </StackPanel>
+          <RibbonGroupBox Header="Open"><Menu>
+                  <MenuItem>
+                <MenuItem.Header>
+                <StackPanel Orientation="Vertical">
+                  <StackPanel Orientation="Horizontal">
+                    <Image ZIndex="0" Height="45" Margin="0,0,0,0" Source="/Assets/round_tune_black_18dp.png"></Image>
+                    <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                    </StackPanel>
+                    <TextBlock Text="Properties"/>
+                  </StackPanel></MenuItem.Header>
+                  <MenuItem Header="tree"/>
+                  </MenuItem></Menu>
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
-              <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
-                <Image Height="20" Source="/Assets/round_open_in_new_black_18dp.png"></Image>
-                <TextBlock Margin="3,2,0,0">Open</TextBlock>
-                <ComboBox Background="Transparent" BorderThickness="0" Margin="-50,0,0,0" Width="65"></ComboBox>
-              </StackPanel>
+              <Menu Margin="0,-7,-5,0">
+                <MenuItem>
+                <MenuItem.Header>
+                <StackPanel Orientation="Horizontal">
+                  <Image Height="20" Source="/Assets/round_open_in_new_black_18dp.png"></Image>
+                  <TextBlock Margin="0,10,0,0">Open</TextBlock>
+                  <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                  </StackPanel>
+                </MenuItem.Header>
+                </MenuItem>
+                </Menu>
               <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
                   <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_edit_black_18dp.png"></Image>
