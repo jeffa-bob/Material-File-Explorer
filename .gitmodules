@@ -1,0 +1,3 @@
+[submodule "AvaloniaRibbon"]
+	path = AvaloniaRibbon
+	url = https://github.com/jeffa-bob/AvaloniaRibbon.git
