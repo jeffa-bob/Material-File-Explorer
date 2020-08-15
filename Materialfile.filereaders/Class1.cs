@@ -6,7 +6,7 @@ namespace Materialfile.filereader
 {
   public class CurDirectory
   {
-    public DirectoryInfo CurDir = new DirectoryInfo("c:\\");
+    public DirectoryInfo CurDir = new DirectoryInfo("e:\\");
     public List<FileInfo> Files { get; private set; }
     public List<DirectoryInfo> Dirs { get; private set; }
 
