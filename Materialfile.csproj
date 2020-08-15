@@ -11,16 +11,20 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.11" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
-    <PackageReference Include="AvaloniaRibbon" Version="1.1.2-build100120-02" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaXaml Remove="AvaloniaRibbon\**" />
     <AvaloniaXaml Remove="Materialfile.filereaders\**" />
+    <Compile Remove="AvaloniaRibbon\**" />
     <Compile Remove="Materialfile.filereaders\**" />
+    <EmbeddedResource Remove="AvaloniaRibbon\**" />
     <EmbeddedResource Remove="Materialfile.filereaders\**" />
+    <None Remove="AvaloniaRibbon\**" />
     <None Remove="Materialfile.filereaders\**" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AvaloniaRibbon\AvaloniaUI.Ribbon\AvaloniaUI.Ribbon.csproj" />
     <ProjectReference Include="Materialfile.filereaders\Materialfile.filereader.csproj" />
   </ItemGroup>
 </Project>
