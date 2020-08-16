@@ -46,7 +46,7 @@
               <StackPanel Orientation="Horizontal">
                 <Button BorderThickness="0" Background="Transparent">
                   <StackPanel Orientation="Vertical">
-                    <Image Source="avares://Win file test/Assets/round_push_pin_black_18dp.png"></Image>
+                    <Image Source="/Assets/round_push_pin_black_18dp.png"></Image>
                     <TextBlock TextAlignment="Center"> Pin to Quick&#x0a;access</TextBlock>
                   </StackPanel>
                 </Button>
@@ -76,7 +76,7 @@
                 </Button>
                 <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
                   <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="22" Source="avares://Win file test/Assets/round_snippet_folder_black_18dp.png"></Image>
+                    <Image Margin="0,0,0,0" Height="22" Source="/Assets/round_snippet_folder_black_18dp.png"></Image>
                     <TextBlock Margin="1,2,0,0">Copy Path</TextBlock>
                   </StackPanel>
                 </Button>
