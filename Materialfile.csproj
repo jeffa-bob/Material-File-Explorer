@@ -12,6 +12,8 @@
     <PackageReference Include="Avalonia" Version="0.9.11" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaResource Include="AvaloniaRibbon\AvaloniaUI.Ribbon\Styles\RibbonStyles.xaml" />
+    <AvaloniaResource Include="AvaloniaRibbon\AvaloniaUI.Ribbon\Styles\RibbonThemeColor.xaml" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaXaml Remove="AvaloniaRibbon\**" />

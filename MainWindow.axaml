@@ -36,10 +36,12 @@
   </Window.Styles>
   <DockPanel>
     <Ribbon Background="#212121" VerticalAlignment="Top" Name="File" DockPanel.Dock="Top" Orientation="Horizontal">
-
+      <Ribbon.Menu>
+        <RibbonMenu Background="#212121">
+        </RibbonMenu>
+      </Ribbon.Menu>
       <RibbonTab Header="Home" Background="#212121">
-        <RibbonTab.Content>
-          <StackPanel Background="#212121" Orientation="Horizontal">
+        <RibbonTab.Groups>
             <RibbonGroupBox Header="Clipboard">
               <StackPanel Orientation="Horizontal">
                 <Button BorderThickness="0" Background="Transparent">
@@ -94,9 +96,9 @@
                       <MenuItem.Header>
                         <StackPanel Orientation="Vertical">
                           <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,0,0,0" Source="\Assets\round_folder_black_18dp.png"></Image>
-                            <Image ZIndex="20" Margin="-38,-30,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
-                            <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                            <Image ZIndex="0" Margin="0,20,0,0" Source="\Assets\round_folder_black_18dp.png"></Image>
+                            <Image ZIndex="20" Margin="-38,-10,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
+                            <Image Margin="-10,10,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
                           </StackPanel>
                           <TextBlock Text="Move To"/>
                         </StackPanel>
@@ -107,8 +109,8 @@
                       <MenuItem.Header>
                         <StackPanel Orientation="Vertical">
                           <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
-                            <Image ZIndex="20" Margin="-30,-20,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
+                            <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
+                            <Image ZIndex="20" Margin="-30,-5,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
                             <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
                           </StackPanel>
                           <TextBlock Text="Copy To"/>
@@ -126,8 +128,8 @@
                       <MenuItem.Header>
                         <StackPanel Orientation="Vertical">
                           <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,0,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
-                            <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                            <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
+                            <Image Margin="-10,20,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
                           </StackPanel>
                           <TextBlock Text="Delete"/>
                         </StackPanel>
@@ -136,7 +138,7 @@
                     </MenuItem>
                   </Menu>
                   <Button Background="Transparent" BorderThickness="0">
-                    <StackPanel Margin="0,-5,0,0" Orientation="Vertical">
+                    <StackPanel Margin="0,15,0,0" Orientation="Vertical">
                       <Image Margin="0,-5,0,0" Source="/Assets/round_calendar_view_day_black_18dp.png"></Image>
                       <TextBlock Margin="0,5,0,0">Rename</TextBlock>
                     </StackPanel>
@@ -241,11 +243,10 @@
                 </Button>
               </StackPanel>
             </RibbonGroupBox>
-          </StackPanel>
-        </RibbonTab.Content>
+        </RibbonTab.Groups>
       </RibbonTab>
       <RibbonTab Header="Share" Background="#212121">
-        <RibbonTab.Content>
+        <RibbonTab.Groups>
           <StackPanel Orientation="Horizontal" Background="#212121">
             <RibbonGroupBox Header="Send">
               <StackPanel Orientation="Horizontal">
@@ -323,7 +324,7 @@
               </Button>
             </RibbonGroupBox>
           </StackPanel>
-        </RibbonTab.Content>
+        </RibbonTab.Groups>
       </RibbonTab>
     </Ribbon>
     <DockPanel Margin="0,20,0,0" Background="#424242" DockPanel.Dock="Top">
@@ -348,7 +349,7 @@
           <ComboBox Background="Transparent" BorderThickness="0" Margin="10,-30,0,0" Height="30" Width="11"></ComboBox>
         </StackPanel>
 
-        <Button Background="Transparent" BorderThickness="0" >
+        <Button Command="{Binding UpFolder}" Background="Transparent" BorderThickness="0" >
           <Image Height="25" Source="/Assets/round_exit_to_app_black_18dp.png">
           </Image>
         </Button>
@@ -395,7 +396,7 @@
           </ItemsControl.Styles>
           <ItemsControl.ItemTemplate>
             <DataTemplate DataType="{x:Type io:DirectoryInfo}">
-              <Button HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent">
+              <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
                 <Grid>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
