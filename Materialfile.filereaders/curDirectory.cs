@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System;
 using System.IO;
 using System.ComponentModel;
@@ -15,39 +16,15 @@ namespace Materialfile.filereader
     
     readonly public string OSslash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX) ? "/" : "\\";
 
-    private DirectoryInfo _CurDir;
-    public DirectoryInfo CurDir
-    { get { return _CurDir; } set {
-        _CurDir = value;
-        getitems();
-        OnPropertyChanged();
-      }  }
+    public DirectoryInfo CurDir{get; set;}
 
-    private List<FileInfo> _Files;
-    public List<FileInfo> Files
-    {
-      get { return _Files; }
-      set
-      {
-        _Files = value;
-        OnPropertyChanged();
-      }
-    }
-    private List<DirectoryInfo> _Dirs;
-    public List<DirectoryInfo> Dirs
-    {
-      get { return _Dirs; }
-      set
-      {
-        _Dirs = value;
-        OnPropertyChanged();
-      }
-    }
+    public ObservableCollection<FileInfo> Files {get; set;}
+    public ObservableCollection<DirectoryInfo> Dirs {get; set;}
 
-    private void getitems()
+    public void getitems()
     {
-      Files = CurDir.GetFiles().ToList();
-      Dirs = CurDir.GetDirectories().ToList();
+      Files = new ObservableCollection<FileInfo>(CurDir.GetFiles().ToList());
+      Dirs = new ObservableCollection<DirectoryInfo>(CurDir.GetDirectories().ToList());
     }
 
     protected void OnPropertyChanged([CallerMemberName] string name = null)
