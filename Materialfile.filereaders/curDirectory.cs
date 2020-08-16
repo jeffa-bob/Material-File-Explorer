@@ -16,15 +16,25 @@ namespace Materialfile.filereader
     
     readonly public string OSslash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX) ? "/" : "\\";
 
-    public DirectoryInfo CurDir{get; set;}
-
-    public ObservableCollection<FileInfo> Files {get; set;}
-    public ObservableCollection<DirectoryInfo> Dirs {get; set;}
-
-    public void getitems()
+    private DirectoryInfo _CurDir;
+    public DirectoryInfo CurDir
     {
-      Files = new ObservableCollection<FileInfo>(CurDir.GetFiles().ToList());
-      Dirs = new ObservableCollection<DirectoryInfo>(CurDir.GetDirectories().ToList());
+      get { return _CurDir; }
+      set
+      {
+        _CurDir = value;
+        getitems();
+        OnPropertyChanged();
+      }
+    }
+
+    public List<FileInfo> Files { get; set; }
+    public List<DirectoryInfo> Dirs { get; set; }
+
+    protected void getitems()
+    {
+      Files = CurDir.GetFiles().ToList();
+      Dirs = CurDir.GetDirectories().ToList();
     }
 
     protected void OnPropertyChanged([CallerMemberName] string name = null)

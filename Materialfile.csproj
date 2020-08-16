@@ -12,21 +12,23 @@
     <PackageReference Include="Avalonia" Version="0.9.11" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
     <AvaloniaResource Include="Assets\**" />
-    <AvaloniaResource Include="AvaloniaRibbon\AvaloniaUI.Ribbon\Styles\RibbonStyles.xaml" />
-    <AvaloniaResource Include="AvaloniaRibbon\AvaloniaUI.Ribbon\Styles\RibbonThemeColor.xaml" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaXaml Remove="AvaloniaRibbon\**" />
+    <AvaloniaXaml Remove="AvaloniaUI.Ribbon\**" />
     <AvaloniaXaml Remove="Materialfile.filereaders\**" />
     <Compile Remove="AvaloniaRibbon\**" />
+    <Compile Remove="AvaloniaUI.Ribbon\**" />
     <Compile Remove="Materialfile.filereaders\**" />
     <EmbeddedResource Remove="AvaloniaRibbon\**" />
+    <EmbeddedResource Remove="AvaloniaUI.Ribbon\**" />
     <EmbeddedResource Remove="Materialfile.filereaders\**" />
     <None Remove="AvaloniaRibbon\**" />
+    <None Remove="AvaloniaUI.Ribbon\**" />
     <None Remove="Materialfile.filereaders\**" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AvaloniaRibbon\AvaloniaUI.Ribbon\AvaloniaUI.Ribbon.csproj" />
+    <ProjectReference Include="AvaloniaUI.Ribbon\AvaloniaUI.Ribbon.csproj" />
     <ProjectReference Include="Materialfile.filereaders\Materialfile.filereader.csproj" />
   </ItemGroup>
 </Project>
