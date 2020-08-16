@@ -12,6 +12,7 @@
     <PackageReference Include="Avalonia" Version="0.9.11" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
     <AvaloniaResource Include="Assets/**" />
+    <AvaloniaResource Include="../AvaloniaUI.Ribbon/Styles/*.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AvaloniaUI.Ribbon\AvaloniaUI.Ribbon.csproj" />

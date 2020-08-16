@@ -28,10 +28,28 @@ namespace Materialfile.filereader
       }
     }
 
-    public List<FileInfo> Files { get; set; }
-    public List<DirectoryInfo> Dirs { get; set; }
+    private List<FileInfo> _Files;
+    public List<FileInfo> Files
+    {
+      get { return _Files; }
+      set
+      {
+        _Files = value;
+        OnPropertyChanged();
+      }
+    }
+    private List<DirectoryInfo> _Dirs;
+    public List<DirectoryInfo> Dirs
+    {
+      get { return _Dirs; }
+      set
+      {
+        _Dirs = value;
+        OnPropertyChanged();
+      }
+    }
 
-    protected void getitems()
+    private void getitems()
     {
       Files = CurDir.GetFiles().ToList();
       Dirs = CurDir.GetDirectories().ToList();
