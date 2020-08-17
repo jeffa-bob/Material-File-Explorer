@@ -8,10 +8,10 @@ namespace Materialfile
 {
   public class MainWindow : Window
   {
-    public static CurDirectory cur { get; set; } 
+    public static ViewDirectory cur { get; set; }
     public MainWindow()
     {
-      cur = new CurDirectory();
+      cur = new ViewDirectory();
       cur.CurDir = new System.IO.DirectoryInfo(cur.homePath);
       System.Console.WriteLine(Materialfile.MainWindow.cur.CurDir.FullName);
       InitializeComponent();
@@ -23,8 +23,19 @@ namespace Materialfile
 
     private void ChangeFolder(object sender, RoutedEventArgs e)
     {
-      cur.CurDir = new System.IO.DirectoryInfo(((Button)sender).Tag.ToString()+cur.OSslash);
+      cur.CurDir = new System.IO.DirectoryInfo(((Button)sender).Tag.ToString() + cur.OSslash);
       System.Console.WriteLine(((Button)sender).Tag.ToString());
+    }
+
+    private void backfolder()
+    {
+      cur.history.backhistory();
+      cur.CurDir = cur.history.directory;
+    }
+
+    private void forfolder(){
+      cur.history.forhistory();
+      cur.CurDir = cur.history.directory;
     }
 
     private void UpFolder()

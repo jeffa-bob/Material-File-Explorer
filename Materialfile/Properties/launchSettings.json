@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Materialfile": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "authenticationMode": "None"
+    }
+  }
+}

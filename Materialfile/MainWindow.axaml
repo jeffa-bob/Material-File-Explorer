@@ -338,14 +338,14 @@
     </Ribbon>
     <DockPanel Margin="0,20,0,0" Background="#424242" DockPanel.Dock="Top">
       <StackPanel   Orientation="Horizontal" DockPanel.Dock="Left">
-        <Button DockPanel.Dock="Left" Background="Transparent" BorderThickness="0" >
+        <Button DockPanel.Dock="Left" Background="Transparent" BorderThickness="0" Command="{Binding backfolder}">
           <Image Height="25" Source="/Assets/round_arrow_circle_up_black_18dp.png">
             <Image.RenderTransform>
               <RotateTransform  Angle="-90"/>
             </Image.RenderTransform>
           </Image>
         </Button>
-        <Button Background="Transparent" BorderThickness="0" >
+        <Button Background="Transparent" BorderThickness="0"  Command="{Binding forfolder}">
           <Image Height="25" Source="/Assets/round_arrow_circle_up_black_18dp.png">
             <Image.RenderTransform>
               <RotateTransform  Angle="90"/>
