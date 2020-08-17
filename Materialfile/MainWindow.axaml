@@ -9,6 +9,12 @@
         Height="600"
         Width="1050"
         Background="#212121">
+  <Window.Resources>
+    <Color x:Key="Background">#212121</Color>
+    <Color x:Key="Foreground">#FAFAFA</Color>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource Background}"/>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource Foreground}"/>
+  </Window.Resources>
   <Window.Styles>
     <Style Selector="RibbonTab.Header">
       <Setter Property="FontFamily" Value="Roboto"/>
@@ -23,6 +29,9 @@
       <Setter Property="FontFamily" Value="Roboto"/>
       <Setter Property="Foreground" Value="#FAFAFA"/>
       <Setter Property="FontWeight" Value="520"/>
+    </Style>
+    <Style Selector="ItemsControl.filebox:pointerover">
+      
     </Style>
     <!--
     <Style Selector="Documents">
@@ -361,7 +370,7 @@
       <ListBox Background="Transparent" VerticalAlignment="Stretch" Width="125" DockPanel.Dock="Left"/>
         <ScrollViewer>
       <ListBox Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DockPanel.Dock="Right">
-        <ItemsControl Items="{Binding cur.Files}">
+        <ItemsControl Items="{Binding cur.Files}"  Classes="filebox">
           <ItemsControl.ItemTemplate>
             <DataTemplate DataType="{x:Type io:FileInfo}">
               <Button HorizontalContentAlignment="Stretch" BorderThickness="0" Background="Transparent">
@@ -387,7 +396,7 @@
           </ItemsControl.ItemTemplate>
         </ItemsControl>
         
-        <ItemsControl ScrollViewer.VerticalScrollBarVisibility="Visible" Items="{Binding cur.Dirs}">
+        <ItemsControl Items="{Binding cur.Dirs}"  Classes="filebox">
           <ItemsControl.Styles>
             <Style Selector="ItemsControl:pointerover">
               <Setter Property="Foreground" Value="Transparent"/>
