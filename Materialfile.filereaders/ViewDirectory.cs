@@ -88,7 +88,7 @@ namespace Materialfile.filereader
       {
         _CurDir = value;
         getitems();
-        history.addtoHistory(value);
+        this.history.addtoHistory(this.CurDir);
         OnPropertyChanged();
       }
     }
