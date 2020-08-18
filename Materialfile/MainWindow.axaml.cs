@@ -13,6 +13,7 @@ namespace Materialfile
     {
       cur = new ViewDirectory();
       cur.CurDir = new System.IO.DirectoryInfo(cur.homePath);
+      cur.history.DirBackHistory.Add(cur.CurDir);
       System.Console.WriteLine(Materialfile.MainWindow.cur.CurDir.FullName);
       InitializeComponent();
       DataContext = this;
@@ -21,9 +22,18 @@ namespace Materialfile
 #endif
     }
 
+    private void OpenFile(object sender, RoutedEventArgs e)
+    {
+      string path = ((Button)sender).Tag.ToString() + cur.OSslash;
+      path = path.Remove(path.Length - 1);
+      System.Console.WriteLine(path);
+      System.Diagnostics.Process.Start(path);
+    }
+
     private void ChangeFolder(object sender, RoutedEventArgs e)
     {
       cur.CurDir = new System.IO.DirectoryInfo(((Button)sender).Tag.ToString() + cur.OSslash);
+      cur.history.addtoHistory(cur.CurDir);
       System.Console.WriteLine(((Button)sender).Tag.ToString());
     }
 
@@ -42,6 +52,7 @@ namespace Materialfile
     {
       if (System.IO.Directory.GetParent(cur.CurDir.FullName) != null) {
         cur.CurDir = System.IO.Directory.GetParent(cur.CurDir.FullName);
+        cur.history.addtoHistory(cur.CurDir);
         System.Console.WriteLine(cur.CurDir.FullName);
       }
       else

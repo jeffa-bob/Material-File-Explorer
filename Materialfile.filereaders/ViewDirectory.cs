@@ -17,8 +17,8 @@ namespace Materialfile.filereader
 
     public DirectoryInfo directory { get; set; }
 
-    private List<DirectoryInfo> _DirBackHistory;
-    private List<DirectoryInfo> DirBackHistory
+    private List<DirectoryInfo> _DirBackHistory= new List<DirectoryInfo>();
+    public List<DirectoryInfo> DirBackHistory
     {
       get
       {
@@ -31,7 +31,7 @@ namespace Materialfile.filereader
       }
     }
 
-    private List<DirectoryInfo> _DirForHistory;
+    private List<DirectoryInfo> _DirForHistory  = new List<DirectoryInfo>();
     private List<DirectoryInfo> DirForHistory
     {
       get
@@ -47,19 +47,24 @@ namespace Materialfile.filereader
 
     public void backhistory()
     {
-      directory = DirBackHistory[0];
+      try { directory = DirBackHistory[0];
       DirForHistory.Insert(0, DirBackHistory[0]);
-      DirBackHistory.RemoveAt(0);
+      DirBackHistory.RemoveAt(0); } 
+      catch (ArgumentOutOfRangeException) {}
     }
     public void forhistory()
     {
-      directory = DirForHistory[0];
-      DirBackHistory.Insert(0, DirForHistory[0]);
-      DirForHistory.RemoveAt(0);
+      try
+      {
+        directory = DirForHistory[0];
+        DirBackHistory.Insert(0, DirForHistory[0]);
+        DirForHistory.RemoveAt(0);
+      }
+      catch (ArgumentOutOfRangeException) {}
     }
     public void addtoHistory(DirectoryInfo dir)
     {
-      try { DirBackHistory.Insert(location, dir); }
+      try { DirBackHistory.Insert(0, dir); }
       catch (NullReferenceException) { }
     }
 
@@ -88,7 +93,6 @@ namespace Materialfile.filereader
       {
         _CurDir = value;
         getitems();
-        this.history.addtoHistory(this.CurDir);
         OnPropertyChanged();
       }
     }

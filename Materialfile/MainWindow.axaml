@@ -30,8 +30,9 @@
       <Setter Property="Foreground" Value="#FAFAFA"/>
       <Setter Property="FontWeight" Value="520"/>
     </Style>
-    <Style Selector="ItemsControl.filebox:pointerover">
-      
+    <Style Selector="ListBox.filebox">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
     </Style>
     <!--
     <Style Selector="Documents">
@@ -353,9 +354,24 @@
           </Image>
         </Button>
         <StackPanel Orientation="Vertical">
-          <Image Margin="2,5,0,0" Source="/Assets/round_arrow_drop_down_black_18dp.png">
-          </Image>
-          <ComboBox Background="Transparent" BorderThickness="0" Margin="10,-30,0,0" Height="30" Width="11"></ComboBox>
+          <Menu Margin="-10,0,-10,0">
+            <MenuItem Margin="-7,0,-7,0">
+              <MenuItem.Header>
+                <Image Margin="2,5,0,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+              </MenuItem.Header>
+              <ListBox Items="{Binding cur.History.DirBackHistory}">
+                <ListBox.ItemTemplate>
+                  <DataTemplate DataType="{x:Type io:DirectoryInfo}">
+                    <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
+                      <StackPanel Orientation="Horizontal">
+                        <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_folder_open_black_18dp.png"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/></StackPanel>
+                    </Button>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </MenuItem>
+          </Menu>
         </StackPanel>
 
         <Button Command="{Binding UpFolder}" Background="Transparent" BorderThickness="0" >
@@ -367,13 +383,12 @@
     </DockPanel>
 
     <DockPanel Background="Transparent">
-      <ListBox Background="Transparent" VerticalAlignment="Stretch" Width="125" DockPanel.Dock="Left"/>
         <ScrollViewer>
-      <ListBox Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DockPanel.Dock="Right">
-        <ItemsControl Items="{Binding cur.Files}"  Classes="filebox">
-          <ItemsControl.ItemTemplate>
+          <StackPanel Orientation="Vertical">
+        <ListBox Items="{Binding cur.Files}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+          <ListBox.ItemTemplate>
             <DataTemplate DataType="{x:Type io:FileInfo}">
-              <Button HorizontalContentAlignment="Stretch" BorderThickness="0" Background="Transparent">
+              <Button Tag="{Binding FullName}" HorizontalContentAlignment="Stretch" BorderThickness="0" Background="Transparent" Click="OpenFile">
                 <Grid>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -393,17 +408,17 @@
                 </Grid>
               </Button>
             </DataTemplate>
-          </ItemsControl.ItemTemplate>
-        </ItemsControl>
+          </ListBox.ItemTemplate>
+        </ListBox>
         
-        <ItemsControl Items="{Binding cur.Dirs}"  Classes="filebox">
-          <ItemsControl.Styles>
+        <ListBox Margin="0,-9,0,0" Items="{Binding cur.Dirs}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+          <ListBox.Styles>
             <Style Selector="ItemsControl:pointerover">
               <Setter Property="Foreground" Value="Transparent"/>
               <Setter Property="Background" Value="Transparent"/>
             </Style>
-          </ItemsControl.Styles>
-          <ItemsControl.ItemTemplate>
+          </ListBox.Styles>
+          <ListBox.ItemTemplate>
             <DataTemplate DataType="{x:Type io:DirectoryInfo}">
               <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
                 <Grid>
@@ -425,9 +440,9 @@
                 </Grid>
               </Button>
             </DataTemplate>
-          </ItemsControl.ItemTemplate>
-        </ItemsControl>
-      </ListBox></ScrollViewer>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </StackPanel></ScrollViewer>
     </DockPanel>
   </DockPanel>
 </Window>
