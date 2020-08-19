@@ -52,207 +52,207 @@
       </Ribbon.Menu>
       <RibbonTab Header="Home" Background="#212121">
         <RibbonTab.Groups>
-            <RibbonGroupBox Header="Clipboard">
+          <RibbonGroupBox Header="Clipboard">
+            <StackPanel Orientation="Horizontal">
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_push_pin_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center"> Pin to Quick&#x0a;access</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_file_copy_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center">Copy</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Source="/Assets/round_content_paste_black_18dp.png"></Image>
+                  <TextBlock TextAlignment="Center">Paste</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Width="22" Height="15" Stretch="Fill"  Source="/Assets/round_content_cut_black_18dp.png">
+                    <Image.RenderTransform>
+                      <RotateTransform Angle="-90"/>
+                    </Image.RenderTransform>
+                  </Image>
+                  <TextBlock Margin="0,0,0,0">Cut</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="22" Source="/Assets/round_snippet_folder_black_18dp.png"></Image>
+                  <TextBlock Margin="1,2,0,0">Copy Path</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Height="22" Source="/Assets/round_arrow_circle_up_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Paste shortcut</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Organize">
+            <RibbonGroupBox>
               <StackPanel Orientation="Horizontal">
-                <Button BorderThickness="0" Background="Transparent">
-                  <StackPanel Orientation="Vertical">
-                    <Image Source="/Assets/round_push_pin_black_18dp.png"></Image>
-                    <TextBlock TextAlignment="Center"> Pin to Quick&#x0a;access</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button BorderThickness="0" Background="Transparent">
-                  <StackPanel Orientation="Vertical">
-                    <Image Source="/Assets/round_file_copy_black_18dp.png"></Image>
-                    <TextBlock TextAlignment="Center">Copy</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button BorderThickness="0" Background="Transparent">
-                  <StackPanel Orientation="Vertical">
-                    <Image Source="/Assets/round_content_paste_black_18dp.png"></Image>
-                    <TextBlock TextAlignment="Center">Paste</TextBlock>
-                  </StackPanel>
-                </Button>
-              </StackPanel>
-              <StackPanel Orientation="Vertical">
-                <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Width="22" Height="15" Stretch="Fill"  Source="/Assets/round_content_cut_black_18dp.png">
-                      <Image.RenderTransform>
-                        <RotateTransform Angle="-90"/>
-                      </Image.RenderTransform>
-                    </Image>
-                    <TextBlock Margin="0,0,0,0">Cut</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="22" Source="/Assets/round_snippet_folder_black_18dp.png"></Image>
-                    <TextBlock Margin="1,2,0,0">Copy Path</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" BorderThickness="0" Background="Transparent">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Height="22" Source="/Assets/round_arrow_circle_up_black_18dp.png"></Image>
-                    <TextBlock Margin="2,0,0,0">Paste shortcut</TextBlock>
-                  </StackPanel>
-                </Button>
-              </StackPanel>
-            </RibbonGroupBox>
-            <RibbonGroupBox Header="Organize">
-              <RibbonGroupBox>
-                <StackPanel Orientation="Horizontal">
-                  <Menu>
-                    <MenuItem>
-                      <MenuItem.Header>
-                        <StackPanel Orientation="Vertical">
-                          <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,20,0,0" Source="\Assets\round_folder_black_18dp.png"></Image>
-                            <Image ZIndex="20" Margin="-38,-10,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
-                            <Image Margin="-10,10,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
-                          </StackPanel>
-                          <TextBlock Text="Move To"/>
-                        </StackPanel>
-                      </MenuItem.Header>
-                      <MenuItem Header="tree"/>
-                    </MenuItem>
-                    <MenuItem>
-                      <MenuItem.Header>
-                        <StackPanel Orientation="Vertical">
-                          <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
-                            <Image ZIndex="20" Margin="-30,-5,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
-                            <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
-                          </StackPanel>
-                          <TextBlock Text="Copy To"/>
-                        </StackPanel>
-                      </MenuItem.Header>
-                      <MenuItem Header="tree"/>
-                    </MenuItem>
-                  </Menu>
-                </StackPanel>
-              </RibbonGroupBox>
-              <RibbonGroupBox>
-                <StackPanel Orientation="Horizontal">
-                  <Menu>
-                    <MenuItem>
-                      <MenuItem.Header>
-                        <StackPanel Orientation="Vertical">
-                          <StackPanel Orientation="Horizontal">
-                            <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
-                            <Image Margin="-10,20,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
-                          </StackPanel>
-                          <TextBlock Text="Delete"/>
-                        </StackPanel>
-                      </MenuItem.Header>
-                      <MenuItem Header="tree"/>
-                    </MenuItem>
-                  </Menu>
-                  <Button Background="Transparent" BorderThickness="0">
-                    <StackPanel Margin="0,15,0,0" Orientation="Vertical">
-                      <Image Margin="0,-5,0,0" Source="/Assets/round_calendar_view_day_black_18dp.png"></Image>
-                      <TextBlock Margin="0,5,0,0">Rename</TextBlock>
-                    </StackPanel>
-                  </Button>
-                </StackPanel>
-              </RibbonGroupBox>
-            </RibbonGroupBox>
-            <RibbonGroupBox Header="New">
-              <StackPanel Orientation="Horizontal">
-                <Button BorderThickness="0" Background="Transparent">
-                  <StackPanel Orientation="Vertical">
-                    <Image Margin="0,-5,0,0" Source="/Assets/round_create_new_folder_black_18dp.png"></Image>
-                    <TextBlock Margin="0,4,0,0"> New Folder</TextBlock>
-                  </StackPanel>
-                </Button>
-                <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
-                  <Menu Margin="0,-7,0,0">
-                    <MenuItem>
-                      <MenuItem.Header>
+                <Menu>
+                  <MenuItem>
+                    <MenuItem.Header>
+                      <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
-                          <Image Height="20" Source="/Assets/round_note_add_black_18dp.png"></Image>
-                          <TextBlock Margin="0,10,0,0">New item</TextBlock>
-                          <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                          <Image ZIndex="0" Margin="0,20,0,0" Source="\Assets\round_folder_black_18dp.png"></Image>
+                          <Image ZIndex="20" Margin="-38,-10,0,0" Height="40" Source="/Assets/round_arrow_right_alt_black_18dp.png"></Image>
+                          <Image Margin="-10,10,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
                         </StackPanel>
-                      </MenuItem.Header>
-                    </MenuItem>
-                  </Menu>
-                  <Menu Margin="0,-10,0,0">
-                    <MenuItem>
-                      <MenuItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                          <Image Height="20" Source="/Assets/round_class_black_18dp.png"></Image>
-                          <TextBlock Margin="0,10,0,0">Easy Access</TextBlock>
-                          <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
-                        </StackPanel>
-                      </MenuItem.Header>
-                    </MenuItem>
-                  </Menu>
-                </StackPanel>
-              </StackPanel>
-            </RibbonGroupBox>
-            <RibbonGroupBox Header="Open">
-              <Menu>
-                <MenuItem>
-                  <MenuItem.Header>
-                    <StackPanel Orientation="Vertical">
-                      <StackPanel Orientation="Horizontal">
-                        <Image ZIndex="0" Height="45" Margin="0,0,0,0" Source="/Assets/round_tune_black_18dp.png"></Image>
-                        <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                        <TextBlock Text="Move To"/>
                       </StackPanel>
-                      <TextBlock Text="Properties"/>
-                    </StackPanel>
-                  </MenuItem.Header>
-                  <MenuItem Header="tree"/>
-                </MenuItem>
-              </Menu>
-              <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
-                <Menu Margin="0,-7,-5,0">
+                    </MenuItem.Header>
+                    <MenuItem Header="tree"/>
+                  </MenuItem>
+                  <MenuItem>
+                    <MenuItem.Header>
+                      <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                          <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_folder_black_18dp.png"></Image>
+                          <Image ZIndex="20" Margin="-30,-5,0,0" Height="20" Source="/Assets/round_content_copy_black_18dp.png"></Image>
+                          <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                        </StackPanel>
+                        <TextBlock Text="Copy To"/>
+                      </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="tree"/>
+                  </MenuItem>
+                </Menu>
+              </StackPanel>
+            </RibbonGroupBox>
+            <RibbonGroupBox>
+              <StackPanel Orientation="Horizontal">
+                <Menu>
+                  <MenuItem>
+                    <MenuItem.Header>
+                      <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                          <Image ZIndex="0" Margin="0,20,0,0" Source="/Assets/round_clear_black_18dp.png"></Image>
+                          <Image Margin="-10,20,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                        </StackPanel>
+                        <TextBlock Text="Delete"/>
+                      </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="tree"/>
+                  </MenuItem>
+                </Menu>
+                <Button Background="Transparent" BorderThickness="0">
+                  <StackPanel Margin="0,15,0,0" Orientation="Vertical">
+                    <Image Margin="0,-5,0,0" Source="/Assets/round_calendar_view_day_black_18dp.png"></Image>
+                    <TextBlock Margin="0,5,0,0">Rename</TextBlock>
+                  </StackPanel>
+                </Button>
+              </StackPanel>
+            </RibbonGroupBox>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="New">
+            <StackPanel Orientation="Horizontal">
+              <Button BorderThickness="0" Background="Transparent">
+                <StackPanel Orientation="Vertical">
+                  <Image Margin="0,-5,0,0" Source="/Assets/round_create_new_folder_black_18dp.png"></Image>
+                  <TextBlock Margin="0,4,0,0"> New Folder</TextBlock>
+                </StackPanel>
+              </Button>
+              <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                <Menu Margin="0,-7,0,0">
                   <MenuItem>
                     <MenuItem.Header>
                       <StackPanel Orientation="Horizontal">
-                        <Image Height="20" Source="/Assets/round_open_in_new_black_18dp.png"></Image>
-                        <TextBlock Margin="0,10,0,0">Open</TextBlock>
+                        <Image Height="20" Source="/Assets/round_note_add_black_18dp.png"></Image>
+                        <TextBlock Margin="0,10,0,0">New item</TextBlock>
                         <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
                       </StackPanel>
                     </MenuItem.Header>
                   </MenuItem>
                 </Menu>
-                <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
-                  <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_edit_black_18dp.png"></Image>
-                    <TextBlock Margin="2,0,0,0">Edit</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
-                  <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_history_black_18dp.png"></Image>
-                    <TextBlock Margin="2,0,0,0">History</TextBlock>
-                  </StackPanel>
-                </Button>
+                <Menu Margin="0,-10,0,0">
+                  <MenuItem>
+                    <MenuItem.Header>
+                      <StackPanel Orientation="Horizontal">
+                        <Image Height="20" Source="/Assets/round_class_black_18dp.png"></Image>
+                        <TextBlock Margin="0,10,0,0">Easy Access</TextBlock>
+                        <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                      </StackPanel>
+                    </MenuItem.Header>
+                  </MenuItem>
+                </Menu>
               </StackPanel>
-            </RibbonGroupBox>
-            <RibbonGroupBox Header="Select">
-              <StackPanel Orientation="Vertical">
-                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_select_all_black_18dp.png"></Image>
-                    <TextBlock Margin="2,0,0,0">Select All</TextBlock>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Open">
+            <Menu>
+              <MenuItem>
+                <MenuItem.Header>
+                  <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                      <Image ZIndex="0" Height="45" Margin="0,0,0,0" Source="/Assets/round_tune_black_18dp.png"></Image>
+                      <Image Margin="-10,0,-10,0" Source="\Assets\round_arrow_drop_down_black_18dp.png"/>
+                    </StackPanel>
+                    <TextBlock Text="Properties"/>
                   </StackPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_filter_none_black_18dp.png"></Image>
-                    <TextBlock Margin="2,0,0,0">Select None</TextBlock>
-                  </StackPanel>
-                </Button>
-                <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
-                  <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_invert_colors_black_18dp.png"></Image>
-                    <TextBlock Margin="0,0,0,0">Invert Selection</TextBlock>
-                  </StackPanel>
-                </Button>
-              </StackPanel>
-            </RibbonGroupBox>
+                </MenuItem.Header>
+                <MenuItem Header="tree"/>
+              </MenuItem>
+            </Menu>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+              <Menu Margin="0,-7,-5,0">
+                <MenuItem>
+                  <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <Image Height="20" Source="/Assets/round_open_in_new_black_18dp.png"></Image>
+                      <TextBlock Margin="0,10,0,0">Open</TextBlock>
+                      <Image Margin="-10,0,-5,0" Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                    </StackPanel>
+                  </MenuItem.Header>
+                </MenuItem>
+              </Menu>
+              <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_edit_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Edit</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_history_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">History</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
+          <RibbonGroupBox Header="Select">
+            <StackPanel Orientation="Vertical">
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_select_all_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Select All</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_filter_none_black_18dp.png"></Image>
+                  <TextBlock Margin="2,0,0,0">Select None</TextBlock>
+                </StackPanel>
+              </Button>
+              <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Margin="0,0,0,0" Height="20" Source="/Assets/round_invert_colors_black_18dp.png"></Image>
+                  <TextBlock Margin="0,0,0,0">Invert Selection</TextBlock>
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </RibbonGroupBox>
         </RibbonTab.Groups>
       </RibbonTab>
       <RibbonTab Header="Share" Background="#212121">
@@ -365,7 +365,8 @@
                     <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
                       <StackPanel Orientation="Horizontal">
                         <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_folder_open_black_18dp.png"/>
-                        <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/></StackPanel>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/>
+                      </StackPanel>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -383,66 +384,92 @@
     </DockPanel>
 
     <DockPanel Background="Transparent">
-        <ScrollViewer>
-          <StackPanel Orientation="Vertical">
-        <ListBox Items="{Binding cur.Files}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-          <ListBox.ItemTemplate>
-            <DataTemplate DataType="{x:Type io:FileInfo}">
-              <Button Tag="{Binding FullName}" HorizontalContentAlignment="Stretch" BorderThickness="0" Background="Transparent" Click="OpenFile">
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                  </Grid.ColumnDefinitions>
-                  <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                  </Grid.RowDefinitions>
-                  <CheckBox Grid.Row="0" Grid.Column="0" Height="10"/>
-                  <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_insert_drive_file_black_18dp.png"/>
-                  <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/>
-                  <TextBlock Grid.Row="0" Grid.Column="3" Margin="100,0,0,0" Text="{Binding LastWriteTime, StringFormat='{}{0:MM/dd/yyyy, HH:mm:ss}'}"/>
-                  <TextBlock Grid.Row="0" Grid.Column="4" Margin="100,0,0,0" Text="{Binding Length}"/>
-                </Grid>
-              </Button>
+      <Menu Width="150" Items="{Binding drives.DriveInfos}" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Menu.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel Orientation="Vertical"/>
+          </ItemsPanelTemplate>
+        </Menu.ItemsPanel>
+          <Menu.ItemTemplate>
+            <DataTemplate DataType="{x:Type io:DriveInfo}"> 
+            <MenuItem>
+              <MenuItem.Icon>
+                  <Button>
+                    <Image Source="/Assets/round_arrow_drop_down_black_18dp.png"/>
+                  </Button>
+              </MenuItem.Icon>
+              <MenuItem.Header>
+                <Button Tag="{Binding Name}" Command="{Binding ChangeFolder}">
+                <StackPanel Height="15" Orientation="Horizontal" Background="#424242">
+                  <Image Width="15" Height="15" Source="/Assets/round_storage_black_18dp.png"/>
+                  <TextBlock Text="{Binding VolumeLabel}"/>
+                </StackPanel></Button>
+              </MenuItem.Header>
+            </MenuItem>
             </DataTemplate>
-          </ListBox.ItemTemplate>
-        </ListBox>
-        
-        <ListBox Margin="0,-9,0,0" Items="{Binding cur.Dirs}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-          <ListBox.Styles>
-            <Style Selector="ItemsControl:pointerover">
-              <Setter Property="Foreground" Value="Transparent"/>
-              <Setter Property="Background" Value="Transparent"/>
-            </Style>
-          </ListBox.Styles>
-          <ListBox.ItemTemplate>
-            <DataTemplate DataType="{x:Type io:DirectoryInfo}">
-              <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                  </Grid.ColumnDefinitions>
-                  <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                  </Grid.RowDefinitions>
-                  <CheckBox Grid.Row="0" Grid.Column="0" Height="10"/>
-                  <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_folder_open_black_18dp.png"/>
-                  <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/>
-                  <TextBlock Grid.Row="0" Grid.Column="3" Margin="100,0,0,0" Text="{Binding LastWriteTime, StringFormat='{}{0:MM/dd/yyyy, HH:mm:ss}'}"/>
-                  <TextBlock Grid.Row="0" Grid.Column="4" Margin="100,0,0,0" Text=" "/>
-                </Grid>
-              </Button>
-            </DataTemplate>
-          </ListBox.ItemTemplate>
-        </ListBox>
-      </StackPanel></ScrollViewer>
+          </Menu.ItemTemplate>
+      </Menu>
+      <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+          <ListBox Items="{Binding cur.Files}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+              <DataTemplate DataType="{x:Type io:FileInfo}">
+                <Button Tag="{Binding FullName}" HorizontalContentAlignment="Stretch" BorderThickness="0" Background="Transparent" Click="OpenFile">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0" Height="10"/>
+                    <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_insert_drive_file_black_18dp.png"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Margin="100,0,0,0" Text="{Binding LastWriteTime, StringFormat='{}{0:MM/dd/yyyy, HH:mm:ss}'}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" Margin="100,0,0,0" Text="{Binding Length}"/>
+                  </Grid>
+                </Button>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+
+          <ListBox Margin="0,-9,0,0" Items="{Binding cur.Dirs}"  Classes="filebox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.Styles>
+              <Style Selector="ItemsControl:pointerover">
+                <Setter Property="Foreground" Value="Transparent"/>
+                <Setter Property="Background" Value="Transparent"/>
+              </Style>
+            </ListBox.Styles>
+            <ListBox.ItemTemplate>
+              <DataTemplate DataType="{x:Type io:DirectoryInfo}">
+                <Button Tag="{Binding FullName}" HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Click="ChangeFolder">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0" Height="10"/>
+                    <Image Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0" Height="15" Source="/Assets/round_folder_open_black_18dp.png"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Name}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Margin="100,0,0,0" Text="{Binding LastWriteTime, StringFormat='{}{0:MM/dd/yyyy, HH:mm:ss}'}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" Margin="100,0,0,0" Text=" "/>
+                  </Grid>
+                </Button>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </StackPanel>
+      </ScrollViewer>
     </DockPanel>
   </DockPanel>
 </Window>

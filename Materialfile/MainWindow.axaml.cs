@@ -3,15 +3,20 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Materialfile.filereader;
+using Materialfile.Drives;
 
 namespace Materialfile
 {
   public class MainWindow : Window
   {
     public static ViewDirectory cur { get; set; }
+    public static Drive drives { get; set; } 
     public MainWindow()
     {
       cur = new ViewDirectory();
+      drives = new Drive();
+
+
       cur.CurDir = new System.IO.DirectoryInfo(cur.homePath);
       cur.history.DirBackHistory.Add(cur.CurDir);
       System.Console.WriteLine(Materialfile.MainWindow.cur.CurDir.FullName);
